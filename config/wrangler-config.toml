@@ -1,0 +1,139 @@
+# True North Tech AI Agent System - Cloudflare Configuration
+# Account: 3084a71c3a01c15a95432e43c1abb895
+
+# ============================================
+# CHIEF OF STAFF (Main Orchestrator)
+# ============================================
+name = "truenorth-chief-of-staff"
+main = "src/chief-of-staff.js"
+compatibility_date = "2024-01-01"
+account_id = "3084a71c3a01c15a95432e43c1abb895"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "truenorth-agents-db"
+database_id = "8a43cafc-cd91-45af-8367-bfd172e577dc"
+
+[[kv_namespaces]]
+binding = "AGENT_MEMORY"
+id = "b08501f35d24415b94e3d3771e89c80b"
+
+[[kv_namespaces]]
+binding = "AGENT_DECISIONS"
+id = "5eee9ca2758c4dca9dd39a45270a3498"
+
+[[kv_namespaces]]
+binding = "AGENT_CONTEXT"
+id = "462cfcda72214737b00c63cef829897c"
+
+[[queues.producers]]
+binding = "AGENT_QUEUE"
+queue = "truenorth-agent-queue"
+
+[[queues.consumers]]
+queue = "truenorth-agent-queue"
+max_batch_size = 10
+max_batch_timeout = 30
+
+[vars]
+ENVIRONMENT = "production"
+
+# Secrets (set via: wrangler secret put ANTHROPIC_API_KEY)
+# - ANTHROPIC_API_KEY
+# - GITHUB_TOKEN
+
+# ============================================
+# MARKET RESEARCH AGENT
+# ============================================
+[[env.market-research]]
+name = "truenorth-market-research"
+main = "src/market-research-agent.js"
+compatibility_date = "2024-01-01"
+
+[[env.market-research.d1_databases]]
+binding = "DB"
+database_name = "truenorth-agents-db"
+database_id = "8a43cafc-cd91-45af-8367-bfd172e577dc"
+
+[[env.market-research.kv_namespaces]]
+binding = "AGENT_MEMORY"
+id = "b08501f35d24415b94e3d3771e89c80b"
+
+[[env.market-research.queues.producers]]
+binding = "AGENT_QUEUE"
+queue = "truenorth-agent-queue"
+
+[[env.market-research.queues.consumers]]
+queue = "truenorth-agent-queue"
+
+# ============================================
+# UI/UX DESIGNER AGENT
+# ============================================
+[[env.ui-designer]]
+name = "truenorth-ui-designer"
+main = "src/ui-designer-agent.js"
+compatibility_date = "2024-01-01"
+
+[[env.ui-designer.d1_databases]]
+binding = "DB"
+database_name = "truenorth-agents-db"
+database_id = "8a43cafc-cd91-45af-8367-bfd172e577dc"
+
+[[env.ui-designer.kv_namespaces]]
+binding = "AGENT_MEMORY"
+id = "b08501f35d24415b94e3d3771e89c80b"
+
+[[env.ui-designer.queues.producers]]
+binding = "AGENT_QUEUE"
+queue = "truenorth-agent-queue"
+
+[[env.ui-designer.queues.consumers]]
+queue = "truenorth-agent-queue"
+
+# ============================================
+# FRONTEND ENGINEER AGENT
+# ============================================
+[[env.frontend-engineer]]
+name = "truenorth-frontend-engineer"
+main = "src/frontend-engineer-agent.js"
+compatibility_date = "2024-01-01"
+
+[[env.frontend-engineer.d1_databases]]
+binding = "DB"
+database_name = "truenorth-agents-db"
+database_id = "8a43cafc-cd91-45af-8367-bfd172e577dc"
+
+[[env.frontend-engineer.kv_namespaces]]
+binding = "AGENT_MEMORY"
+id = "b08501f35d24415b94e3d3771e89c80b"
+
+[[env.frontend-engineer.queues.producers]]
+binding = "AGENT_QUEUE"
+queue = "truenorth-agent-queue"
+
+[[env.frontend-engineer.queues.consumers]]
+queue = "truenorth-agent-queue"
+
+# ============================================
+# QA ENGINEER AGENT
+# ============================================
+[[env.qa-engineer]]
+name = "truenorth-qa-engineer"
+main = "src/qa-engineer-agent.js"
+compatibility_date = "2024-01-01"
+
+[[env.qa-engineer.d1_databases]]
+binding = "DB"
+database_name = "truenorth-agents-db"
+database_id = "8a43cafc-cd91-45af-8367-bfd172e577dc"
+
+[[env.qa-engineer.kv_namespaces]]
+binding = "AGENT_MEMORY"
+id = "b08501f35d24415b94e3d3771e89c80b"
+
+[[env.qa-engineer.queues.producers]]
+binding = "AGENT_QUEUE"
+queue = "truenorth-agent-queue"
+
+[[env.qa-engineer.queues.consumers]]
+queue = "truenorth-agent-queue"

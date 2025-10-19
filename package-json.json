@@ -1,0 +1,49 @@
+{
+  "name": "truenorth-ai-agents",
+  "version": "1.0.0",
+  "description": "True North Tech - AI Agent System for autonomous software development",
+  "main": "src/chief-of-staff.js",
+  "bin": {
+    "truenorth": "./truenorth-cli.js"
+  },
+  "scripts": {
+    "deploy": "./deploy-truenorth.sh",
+    "dev:chief": "wrangler dev -c truenorth-wrangler.toml",
+    "dev:research": "wrangler dev -c truenorth-wrangler.toml --env market-research",
+    "dev:designer": "wrangler dev -c truenorth-wrangler.toml --env ui-designer",
+    "dev:engineer": "wrangler dev -c truenorth-wrangler.toml --env frontend-engineer",
+    "dev:qa": "wrangler dev -c truenorth-wrangler.toml --env qa-engineer",
+    "logs:chief": "wrangler tail truenorth-chief-of-staff",
+    "logs:research": "wrangler tail truenorth-market-research",
+    "logs:designer": "wrangler tail truenorth-ui-designer",
+    "logs:engineer": "wrangler tail truenorth-frontend-engineer",
+    "logs:qa": "wrangler tail truenorth-qa-engineer",
+    "db:query": "wrangler d1 execute truenorth-agents-db",
+    "db:migrations:create": "wrangler d1 migrations create truenorth-agents-db",
+    "db:migrations:apply": "wrangler d1 migrations apply truenorth-agents-db",
+    "setup": "npm install -g wrangler && wrangler login",
+    "test": "echo 'No tests yet' && exit 0"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "autonomous",
+    "cloudflare",
+    "workers",
+    "claude",
+    "anthropic",
+    "automation"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/tntai.git"
+  }
+}
