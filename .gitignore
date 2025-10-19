@@ -1,8 +1,4 @@
-# True North Tech - Git Ignore Rules
-
-# ============================================
 # Environment & Secrets
-# ============================================
 .env
 .env.local
 .env.*.local
@@ -10,39 +6,26 @@
 *.pem
 secrets/
 
-# ============================================
 # Cloudflare
-# ============================================
 .wrangler/
 .dev.vars
 wrangler.toml.bak
 *.workers.dev
 
-# ============================================
 # Node
-# ============================================
 node_modules/
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
-# ============================================
 # Build & Distribution
-# ============================================
 dist/
 build/
 .cache/
 .temp/
-*.bundle.js
-*.bundle.js.map
 
-# ============================================
 # IDE & Editor
-# ============================================
 .vscode/
 .idea/
 *.swp
@@ -51,59 +34,28 @@ build/
 .DS_Store
 Thumbs.db
 
-# ============================================
 # Logs
-# ============================================
 logs/
 *.log
-npm-debug.log*
-pnpm-debug.log*
 
-# ============================================
 # Testing
-# ============================================
 coverage/
-.nyc_output/
 test-results/
 playwright-report/
-test-artifacts/
 
-# ============================================
 # Database
-# ============================================
 *.db
 *.sqlite
 *.sqlite3
 .d1/
 
-# ============================================
-# Backup & Temporary Files
-# ============================================
+# Backup & Temporary
 *.bak
 *.tmp
 *.temp
 .backup/
 backups/
 
-# ============================================
-# OS Generated
-# ============================================
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# ============================================
-# Documentation Build
-# ============================================
-docs/_build/
-docs/.doctrees/
-
-# ============================================
-# Keep These (exceptions)
-# ============================================
+# Keep These
 !.env.example
 !.gitkeep
