@@ -1,0 +1,2 @@
+# tntai
+TrueNorthTech AI System
